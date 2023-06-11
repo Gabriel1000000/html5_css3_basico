@@ -1,0 +1,188 @@
+@charset "UTF-8";
+/* Para importar uma fonte que você tenha baixado, para usar no projeto
+escreva assim "@font-face{
+    font-family: 'nome da fonte';
+    src: url("caminho da pasta e do arquivo") format("nome da fonte");
+    font-weight: tamanho da fonte;
+}" OU se quiser usar uma fonte da internt usa o url do site escreva assim 
+"@import url("link da fonte")*/
+@font-face{
+    font-family: 'Android';
+    src: url("../fontes/idroid.otf") format('opentype');
+    font-weight: normal;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+/* O ":root" você cria uma variavel em css. Ela permite é como um espaço global
+que faz com que as variaves sejam globais dessa forma as tags que estiverem usando essas variaves,
+alterando a os valores da variavel na "root" ela altera nas tags também!
+OBS: para criar a variavel ela tem que estar com dois trasios "--" como pode ver no codigo abaixo*/
+:root{
+    --cor0: #c5ffc3;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+    --font-padrao: Arial, Helvetica, sans-serif;
+    --font-android: 'Android', Cursive;
+}
+body{
+    background-color: var(--cor0);
+}
+header{
+    background-image: linear-gradient(to bottom, var(--cor3),var(--cor5));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+}
+header > h1{
+    color: white;
+    font-family: var(--font-padrao);
+    font-weight: normal;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+header > p{
+    color: white;
+    font-family: var(--font-padrao);
+    font-size: 1.2em;
+    max-width: 500px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+nav{
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.281); 
+}
+nav > a{
+    color: var(--cor1);
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+}
+nav > a:hover{
+    background-color: var(--cor3);
+    color: var(--cor5);
+}
+a.externo::after{
+    content: "\00A0\1F517";
+    /* o emoji eu peguei no site "emojipedia.org" para colocar o emoje coloque "content:"\numero do emoje" para dar espaço 
+    entre os textos e emoje vc deve adicionar o "\00A0" assim: "content:"\00A0\numero do emoje" se quiser para outro lado faça assim "content:"\numero do emoje\00A0""  */
+}
+main{
+    background-color: white;
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+main  h1{
+    color: var(--cor5);
+    font-family: var(--font-android);
+    font-weight: normal;
+    font-size: 1me;
+    background-image: linear-gradient(to right, var(--cor4), transparent);
+    padding-left: 20px;
+}
+main  h2{
+    color: var(--cor5);
+    font-family: var(--font-android);
+    font-weight: normal;
+    font-size: 1.2em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    padding-left: 20px;
+}
+main p{
+    margin: 15px 0px; /*ou margin: 15px 0px 15px 0px; Daria a mesma coisa!*/
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1em;
+    line-height: 2em;
+}
+main strong{
+    color: var(--cor4);
+    font-weight: bold; 
+}
+main img{
+    width: 100%;
+}
+main a{
+    text-decoration: none;
+    color: var(--cor5);
+    background-color: var(--cor2);
+    font-weight: bold;
+    padding: 2px 6px;
+}
+main a:hover{
+    text-decoration: underline;
+}
+main .pequeno{
+    width: 50%;
+    /* para usar o "margin" em uma imagem deve usar o " display: "block"; " para ele 
+    virar um bloco e assim usar as margens.  */
+    display: block;
+    margin: auto;
+}
+div.video{
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 58%;
+    position: relative;
+}
+div.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+aside{
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+}
+aside > h3{
+    /* background-color: var(--cor4); */
+    background-image: linear-gradient(to bottom, var(--cor5), transparent);
+    padding: 10px;
+    margin: -10px -10px 0px -10px;
+    /* O "margin: -10px -10px 0px -10px" significa que as margens da direita, esquerda e encima são "-10px" */
+    border-radius: 10px 10px 0px 0px;
+}
+aside > ul{
+    list-style-type: "\2714\00A0\00A0";
+    /* A tag "list-style-type: "\2714\00A0\00A0"" essa tega serva para colocar o emoje no lugar dos pontos das listas,
+    mas tem que tomar cuidade porque ela não funciona em todos os navegadores */
+    list-style-position: inside;
+    /* A tag "list-style-position: ; " serve para posicionar as bolinhas da lista para dentro da "aside" então usa-se o "inside"
+    dessa forma " list-style-position: inside; "  */
+    columns: 2;
+    /* Essa tag "columns: ;" serve para criar as listas em forma de colunas para expecificar a quantidade de colunas coloque o numero assim: "columns: 2;" */
+}
+footer{
+    background-color: var(--cor5);
+    color: white;
+    font-size: 0.8em;
+    text-align: center;
+    padding: 5px;
+}
+footer a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+footer a:hover{
+    text-decoration: underline;
+    color: var(--cor1);
+}
